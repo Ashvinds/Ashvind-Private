@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ChatWave</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Login screen -->
+  <div id="login-screen" class="screen">
+    <div class="login-card">
+      <h1>💬 ChatWave</h1>
+      <p>A WhatsApp-style messaging app</p>
+      <input id="username-input" type="text" placeholder="Your name" maxlength="30" />
+      <input id="room-input" type="text" placeholder="Chat / room name (e.g. 'family')" maxlength="50" />
+      <button id="join-btn">Start chatting</button>
+    </div>
+  </div>
+
+  <!-- Chat screen -->
+  <div id="chat-screen" class="screen hidden">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="avatar" id="my-avatar"></div>
+        <span id="my-username"></span>
+      </div>
+      <div class="new-chat">
+        <input id="new-room-input" type="text" placeholder="Go to chat..." maxlength="50" />
+        <button id="go-room-btn">Go</button>
+      </div>
+      <div class="sidebar-section-title">Online in this chat</div>
+      <ul id="online-list" class="online-list"></ul>
+    </aside>
+
+    <main class="chat-main">
+      <header class="chat-header">
+        <div class="chat-header-title">
+          <span id="room-name"></span>
+          <small id="typing-indicator"></small>
+        </div>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <form id="message-form" class="message-form">
+        <input id="message-input" type="text" placeholder="Type a message" autocomplete="off" />
+        <button type="submit">➤</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
